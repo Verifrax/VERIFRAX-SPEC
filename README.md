@@ -1,0 +1,10 @@
+# VERIFRAX SPEC
+
+AUTHORITATIVE SPECIFICATIONS FOR VERIFRAX PROOFS.
+
+THIS REPOSITORY DEFINES:
+- verifrax.proof.v1
+- verifier invariants
+- forward-compatibility rules
+
+IMPLEMENTATIONS MUST CONFORM.
