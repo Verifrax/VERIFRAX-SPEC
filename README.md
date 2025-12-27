@@ -8,3 +8,9 @@ THIS REPOSITORY DEFINES:
 - forward-compatibility rules
 
 IMPLEMENTATIONS MUST CONFORM.
+
+---
+AUTHORITATIVE LINKS:
+- SPEC: https://github.com/Verifrax/VERIFRAX-SPEC
+- PROFILES: https://github.com/Verifrax/VERIFRAX-PROFILES
+- VERIFIER: https://github.com/Verifrax/VERIFRAX-verify
