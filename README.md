@@ -1,16 +1,5 @@
-# VERIFRAX SPEC
+# VERIFRAX-SPEC
 
-AUTHORITATIVE SPECIFICATIONS FOR VERIFRAX PROOFS.
+Published SPEC artifacts derived from `Verifrax/VERIFRAX` (`public/spec`).
 
-THIS REPOSITORY DEFINES:
-- verifrax.proof.v1
-- verifier invariants
-- forward-compatibility rules
-
-IMPLEMENTATIONS MUST CONFORM.
-
----
-AUTHORITATIVE LINKS:
-- SPEC: https://github.com/Verifrax/VERIFRAX-SPEC
-- PROFILES: https://github.com/Verifrax/VERIFRAX-PROFILES
-- VERIFIER: https://github.com/Verifrax/VERIFRAX-verify
+**DO NOT EDIT MANUALLY.**
