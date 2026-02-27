@@ -1,0 +1,41 @@
+name: verify-spec
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect spec presence
+        id: detect
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f "latest/MANIFEST.sha256" && -f "v2.8.0/MANIFEST.sha256" ]]; then
+            echo "present=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify manifest sha256 (latest + versioned)
+        if: steps.detect.outputs.present == '1'
+        run: |
+          set -euo pipefail
+          for d in latest v2.8.0; do
+            (cd "$d" && sha256sum -c MANIFEST.sha256)
+          done
+
+      - name: Verify SOURCE.txt structure
+        if: steps.detect.outputs.present == '1'
+        run: |
+          set -euo pipefail
+          for f in latest/SOURCE.txt v2.8.0/SOURCE.txt; do
+            grep -Eq '^Tag:\s+v[0-9]+\.[0-9]+\.[0-9]+$' "$f"
+            grep -Eq '^Commit:\s+[0-9a-f]{40}$' "$f"
+            grep -Eq '^Repo:\s+https://github\.com/Verifrax/VERIFRAX$' "$f"
+          done
