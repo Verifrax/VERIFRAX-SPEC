@@ -1,0 +1,58 @@
+name: spec-guards
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load manifest
+        id: m
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f .verifrax/spec.manifest.json
+          node -e "console.log('manifest_ok')"
+
+      - name: Required files exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs = require("fs");
+          const m = require("./.verifrax/spec.manifest.json");
+          const req = [...m.required_latest, ...m.required_versioned];
+          const missing = req.filter(p => !fs.existsSync(p));
+          if (missing.length) { console.error("MISSING_FILES"); missing.forEach(p=>console.error(p)); process.exit(1); }
+          console.log("OK: required files present");
+NODE
+
+      - name: FREEZE headers valid
+        shell: bash
+        run: |
+          set -euo pipefail
+          for f in latest/FREEZE.txt v2.8.0/FREEZE.txt; do
+            head -n 1 "$f" | rg -q '^VERIFRAX SPEC FREEZE$' || { echo "BAD_FREEZE_HEADER $f"; exit 1; }
+          done
+          echo "OK: freeze headers"
+
+      - name: Verify MANIFEST.sha256 contents
+        shell: bash
+        run: |
+          set -euo pipefail
+          # sha256sum -c expects "HASH  FILE"
+          (cd latest && sha256sum -c MANIFEST.sha256)
+          (cd v2.8.0 && sha256sum -c MANIFEST.sha256)
+          echo "OK: manifests verify"
+
+      - name: Guard: latest and versioned PAGES_PROOF identical (optional strictness)
+        shell: bash
+        run: |
+          set -euo pipefail
+          cmp -s latest/PAGES_PROOF.txt v2.8.0/PAGES_PROOF.txt || { echo "MISMATCH_PAGES_PROOF latest vs v2.8.0"; exit 1; }
+          echo "OK: pages_proof match"

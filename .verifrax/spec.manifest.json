@@ -1,0 +1,18 @@
+{
+  "spec_id": "VERIFRAX-SPEC",
+  "track": "published-artifacts",
+  "required_latest": [
+    "latest/FREEZE.txt",
+    "latest/MANIFEST.sha256",
+    "latest/PAGES_PROOF.txt"
+  ],
+  "required_versioned": [
+    "v2.8.0/FREEZE.txt",
+    "v2.8.0/MANIFEST.sha256",
+    "v2.8.0/PAGES_PROOF.txt"
+  ],
+  "hash_manifest_files": [
+    "latest/MANIFEST.sha256",
+    "v2.8.0/MANIFEST.sha256"
+  ]
+}
