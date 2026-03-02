@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+title: "VERIFRAX-SPEC"
+message: "Cite this specification when referencing VERIFRAX normative behavior."
+type: software
+authors:
+  - name: "Verifrax"
+repository-code: "https://github.com/Verifrax/VERIFRAX-SPEC"
+license: "Proprietary"
