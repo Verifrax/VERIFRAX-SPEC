@@ -1,16 +1,46 @@
 # VERIFRAX-SPEC
 
-Published SPEC artifacts derived from `Verifrax/VERIFRAX` (`public/spec`).
+## Purpose
 
-**DO NOT EDIT MANUALLY.**
+Normative specification for the Verifrax protocol and formats.
 
----
+## Status
 
-## Normative Surface
+- **Stability**: Experimental
+- **SemVer**: Not guaranteed until v1.0.0
+- **Security**: See **Security** section below
 
-The normative specification lives under `spec/`.
-Version: see `spec/VERSION`.
+## Scope
 
-## Change Control
+- What this repo is responsible for
+- What it explicitly does **not** do
 
-Edits MUST preserve stable section identifiers and anchor targets.
+## Quickstart
+
+```bash
+# clone
+git clone https://github.com/Verifrax/VERIFRAX-SPEC.git
+cd VERIFRAX-SPEC
+
+# install (adjust if needed)
+# (placeholder) npm install / pnpm install / go test ./... / etc.
+```
+
+## Repository layout
+
+- `/` Root sources
+- `/.github/` Issue + PR templates
+- `/docs/` Documentation (if present)
+
+## Security
+
+- Report vulnerabilities privately: **security@verifrax.org**
+- Do **not** open public issues for sensitive findings
+
+## Contributing
+
+See `CONTRIBUTING.md`.
+
+## License
+
+MIT. See `LICENSE`.
