@@ -1,16 +1,26 @@
 # VERIFRAX-SPEC
 
-Published SPEC artifacts derived from `Verifrax/VERIFRAX` (`public/spec`).
+Published specification artifacts derived from `Verifrax/VERIFRAX`.
 
-**DO NOT EDIT MANUALLY.**
+## Repository role
 
----
+This repository publishes derived specification artifacts from VERIFRAX-authored source material.
 
-## Normative Surface
+This repository is a derived publication surface.
 
-The normative specification lives under `spec/`.
-Version: see `spec/VERSION`.
+This repository is not the upstream repository authority surface.
 
-## Change Control
+## Publication surface
 
-Edits MUST preserve stable section identifiers and anchor targets.
+The published specification artifacts in this repository live under `spec/`.
+
+## Authority boundary
+
+- VERIFRAX authors normative source material.
+- VERIFRAX-SPEC publishes derived specification artifacts from VERIFRAX.
+- Derived specification artifacts are not upstream repository authority.
+- Governance authority is external and bound through AUCTORISEAL plus the governed repo set in `.github`.
+
+## Integrity rule
+
+Changes in this repository must remain aligned with the source material authored in `Verifrax/VERIFRAX`.
