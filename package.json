@@ -1,0 +1,26 @@
+{
+  "name": "@verifrax/verifrax-spec",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Derived specification publication surface for the governed Verifrax system.",
+  "license": "Apache-2.0",
+  "type": "commonjs",
+  "files": [
+    "latest",
+    "spec",
+    "v2.8.0",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Verifrax/VERIFRAX-SPEC.git"
+  },
+  "homepage": "https://github.com/Verifrax/VERIFRAX-SPEC#readme",
+  "bugs": {
+    "url": "https://github.com/Verifrax/VERIFRAX-SPEC/issues"
+  }
+}
