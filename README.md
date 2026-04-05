@@ -9,7 +9,7 @@ Derived specification publication surface for the governed Verifrax system.
 * Upstream authored source: `VERIFRAX`
 * npm package: `@verifrax/verifrax-spec`
 * Public host ownership: none claimed as sole host surface in this README
-* Package status: repository publication surface unless metadata proves otherwise
+* Package status: public npm package `@verifrax/verifrax-spec@0.1.0`
 * License: Apache License Version 2.0
 
 ## One-sentence role
