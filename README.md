@@ -1,5 +1,8 @@
 # VERIFRAX-SPEC
 
+Package: @verifrax/verifrax-spec
+Repository: Verifrax/VERIFRAX-SPEC
+
 VERIFRAX-SPEC is the Verifrax derived-specification publication boundary: the public surface that publishes derived specification artifacts from VERIFRAX without becoming authored protocol source, authority issuance, governed execution, public verification, proof publication, archive/reference, or intake.
 
 ## Proof artifacts
