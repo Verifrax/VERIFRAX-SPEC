@@ -5,11 +5,14 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   guards:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Load manifest
         id: m
@@ -30,7 +33,7 @@ jobs:
           const missing = req.filter(p => !fs.existsSync(p));
           if (missing.length) { console.error("MISSING_FILES"); missing.forEach(p=>console.error(p)); process.exit(1); }
           console.log("OK: required files present");
-NODE
+          NODE
 
       - name: FREEZE headers valid
         shell: bash
