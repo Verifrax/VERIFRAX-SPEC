@@ -40,7 +40,7 @@ jobs:
         run: |
           set -euo pipefail
           for f in latest/FREEZE.txt v2.8.0/FREEZE.txt; do
-            head -n 1 "$f" | rg -q '^VERIFRAX SPEC FREEZE$' || { echo "BAD_FREEZE_HEADER $f"; exit 1; }
+            [[ "$(head -n 1 "$f")" == "VERIFRAX SPEC FREEZE" ]] || { echo "BAD_FREEZE_HEADER $f"; exit 1; }
           done
           echo "OK: freeze headers"
 
